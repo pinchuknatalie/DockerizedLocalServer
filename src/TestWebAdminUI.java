@@ -17,6 +17,7 @@ public class TestWebAdminUI {
         // Navigate to a web page (launch the Chrome browser and open the app Url)
         driver.get("http://10.16.1.17:8888");
 
+
         // Get the WebElement logIn
         WebElement login = driver.findElement(By.xpath("//*[@id=\"bs-example-navbar-collapse-9\"]/ul/li[2]/a"));
         login.click();
@@ -32,10 +33,19 @@ public class TestWebAdminUI {
 
         // Get webElement catalog
 
-        WebElement Catalog = driver
+        WebElement Catalog = driver.findElement(By.xpath("//*[@id=\"adminMenuList\"]/li[5]/a"));
+        Catalog.click();
+
+        WebElement LoadCatalog = driver.findElement(By.xpath("btn btn-primary"));
+        LoadCatalog.click();
+
+        WebElement countryCanada = driver.findElement(By.xpath("//*[@id=\"catalogCountries\"]/li[20]/a"));
+        countryCanada.click();
 
 
-                
+
+
+
         driver.close();
         driver.quit();
 
